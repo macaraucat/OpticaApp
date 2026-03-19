@@ -13,10 +13,10 @@ public class UsuarioRepository {
 
     public UsuarioRepository(){
         usuarios.add(new Usuario(1, "11.111.111-1", "Carla Rojas", "987654321", "Av. Siempre Viva 123, Santiago", "carla.rojas@opticavision.cl", "adminPass123", "administrador"));
-        usuarios.add(new Usuario(2, "22.222.222-2", "Miguel Campos", "912345678", "Calle Falsa 456, Viña del Mar", "miguel.campos@opticavision.cl", "vendedorPass456", "vendedor"));
-        usuarios.add(new Usuario(3, "15.333.444-5", "Ana Torres", "955556666", "Pasaje Los Aromos 789, Valparaíso", "ana.torres@email.com", "clientePass789", "cliente"));
-        usuarios.add(new Usuario(4, "18.555.666-K", "Luis González", "944443333", "Av. Libertad 1010, Depto 5B, Viña del Mar", "luis.gonzalez@email.com", "clientePass012", "cliente"));
-        usuarios.add(new Usuario(5, "19.888.777-0", "Sofía Castro", "922221111", "Errázuriz 500, Valparaíso", "sofia.castro@opticavision.cl", "vendedorPass345", "vendedor"));
+        usuarios.add(new Usuario(2, "12.222.222-2", "Miguel Campos", "912345678", "Calle Falsa 456, Viña del Mar", "miguel.campos@opticavision.cl", "vendedorPass456", "vendedor"));
+        usuarios.add(new Usuario(3, "13.333.333-3", "Ana Torres", "955556666", "Pasaje Los Aromos 789, Valparaíso", "ana.torres@email.com", "clientePass789", "cliente"));
+        usuarios.add(new Usuario(4, "14.444.444-4", "Luis González", "944443333", "Av. Libertad 1010, Depto 5B, Viña del Mar", "luis.gonzalez@email.com", "clientePass012", "cliente"));
+        usuarios.add(new Usuario(5, "15.555.555-5", "Sofía Castro", "922221111", "Errázuriz 500, Valparaíso", "sofia.castro@opticavision.cl", "vendedorPass345", "vendedor"));
     }
     
     public List<Usuario> listarTodos(){
