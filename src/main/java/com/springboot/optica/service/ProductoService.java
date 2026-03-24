@@ -14,27 +14,27 @@ public class ProductoService {
     private ProductoRepository prodRepo;
 
     public List<Producto> getAll(){
-        return prodRepo.listarTodos();
+        return prodRepo.findAll();
     }
 
     public Producto getById(int id){
-        return prodRepo.buscarPorId(id);
+        return prodRepo.findById(id);
     }
 
     public Producto post(Producto p){
-        return prodRepo.crear(p);
+        return prodRepo.save(p);
     }
 
     public Producto put(Producto p){
-        return prodRepo.actualizar(p);
+        return prodRepo.update(p);
     }
 
     public String delete(int id){
-        return prodRepo.eliminar(id);
+        return prodRepo.deleteById(id);
     }
 
     //Acción realizada por el servicio
     public int totalProductos() {
-        return prodRepo.listarTodos().size();
+        return prodRepo.findAll().size();
     }
 }

@@ -12,29 +12,29 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepo;
     
     public List<Usuario> getAll(){
-        return usuarioRepo.listarTodos();
+        return usuarioRepo.findAll();
     }
 
     public Usuario getById(int id){
-        return usuarioRepo.buscarPorId(id);
+        return usuarioRepo.findById(id);
     }
 
     public Usuario post(Usuario u){
-        return usuarioRepo.crear(u);
+        return usuarioRepo.save(u);
     }
 
     public Usuario put(Usuario u){
-        return usuarioRepo.actualizar(u);
+        return usuarioRepo.update(u);
     }
 
     public String delete(int id){
-        usuarioRepo.eliminar(id);
+        usuarioRepo.deleteById(id);
         return "Usuario eliminado";
     }
 
     //Acción realizada por el servicio
     public int totalUsuarios() {
-        return usuarioRepo.listarTodos().size();
+        return usuarioRepo.findAll().size();
     }
 
 }

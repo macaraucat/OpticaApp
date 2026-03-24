@@ -22,22 +22,22 @@ public class ProductoRepository {
         productos.add(new Producto(202, "OO9102", "Gafas2", "Montura mate, cristal Prizm", "Oakley", 180000.0, lentesDeSol));
     }
 
-    public List<Producto> listarTodos() {
+    public List<Producto> findAll() {
         return productos;
     }
-    public Producto buscarPorId(int id) {
+    public Producto findById(int id) {
         return productos.stream()
                 .filter(p -> p.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
     
-    public Producto crear(Producto p) {
+    public Producto save(Producto p) {
         productos.add(p);
         return p;
     }
     
-    public Producto actualizar(Producto actualizado) {
+    public Producto update(Producto actualizado) {
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getId() == actualizado.getId()) {
                 productos.set(i, actualizado);
@@ -46,7 +46,7 @@ public class ProductoRepository {
         }
         return null;
     }
-    public String eliminar(int id) {
+    public String deleteById(int id) {
         productos.removeIf(p -> p.getId() == id);
         return "Producto eliminado";
     }

@@ -16,23 +16,23 @@ public class BodegaRepository {
         bodegas.add(new Bodega(2, "Tienda Viña del Mar", "Av. Libertad 850, Viña del Mar"));
         bodegas.add(new Bodega(3, "Punto de Venta Valparaíso", "Calle Esmeralda 1020, Valparaíso"));
     }
-    public List<Bodega> listarTodas() {
+    public List<Bodega> findAll() {
         return bodegas;
     }
 
-    public Bodega buscarPorId(int id) {
+    public Bodega findById(int id) {
         return bodegas.stream()
                 .filter(b -> b.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
     
-    public Bodega crear(Bodega bodega) {
+    public Bodega save(Bodega bodega) {
         bodegas.add(bodega);
         return bodega;
     }
     
-    public Bodega actualizar(Bodega bodegaActualizada) {
+    public Bodega update(Bodega bodegaActualizada) {
         for (int i = 0; i < bodegas.size(); i++) {
             if (bodegas.get(i).getId() == bodegaActualizada.getId()) {
                 bodegas.set(i, bodegaActualizada);
@@ -42,7 +42,7 @@ public class BodegaRepository {
         return null;
     }
     
-    public void eliminar(int id) {
+    public void deleteById(int id) {
         bodegas.removeIf(b -> b.getId() == id);
     }
 }

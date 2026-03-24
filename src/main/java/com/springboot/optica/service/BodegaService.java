@@ -11,18 +11,22 @@ public class BodegaService {
     @Autowired
     private BodegaRepository bodegaRepository;
     public List<Bodega> getAll() {
-        return bodegaRepository.listarTodas();
+        return bodegaRepository.findAll();
     }
+
     public Bodega getById(int id) {
-        return bodegaRepository.buscarPorId(id);
+        return bodegaRepository.findById(id);
     }
+
     public Bodega post(Bodega bodega) {
-        return bodegaRepository.crear(bodega);
+        return bodegaRepository.save(bodega);
     }
+
     public Bodega put(Bodega bodega) {
-        return bodegaRepository.actualizar(bodega);
+        return bodegaRepository.update(bodega);
     }
+    
     public void delete(int id) {
-        bodegaRepository.eliminar(id);
+        bodegaRepository.deleteById(id);
     }
 }

@@ -14,27 +14,27 @@ public class CategoriaService {
     private CategoriaRepository catRepo;
 
     public List<Categoria> getAll(){
-        return catRepo.listarTodas();
+        return catRepo.findAll();
     }
 
     public Categoria getById(int id){
-        return catRepo.buscarPorId(id);
+        return catRepo.findById(id);
     }
 
     public Categoria post(Categoria c){
-        return catRepo.crear(c);
+        return catRepo.save(c);
     }
 
     public Categoria put(Categoria c){
-        return catRepo.actualizar(c);
+        return catRepo.update(c);
     }
 
     public String delete(int id){
-        return catRepo.eliminar(id);
+        return catRepo.deleteById(id);
     }
 
     //Acción realizada por el servicio
     public int totalCategorias() {
-        return catRepo.listarTodas().size();
+        return catRepo.findAll().size();
     }
 }

@@ -19,11 +19,11 @@ public class UsuarioRepository {
         usuarios.add(new Usuario(5, "15.555.555-5", "Sofía Castro", "922221111", "Errázuriz 500, Valparaíso", "sofia.castro@opticavision.cl", "vendedorPass345", "vendedor"));
     }
     
-    public List<Usuario> listarTodos(){
+    public List<Usuario> findAll(){
         return usuarios;
     }
 
-    public Usuario buscarPorId(int id){
+    public Usuario findById(int id){
         for(Usuario u : usuarios){
             if(u.getId() == id){
                 return u;
@@ -32,12 +32,12 @@ public class UsuarioRepository {
         return null;
     }
 
-    public Usuario crear(Usuario u){
+    public Usuario save(Usuario u){
         usuarios.add(u);
         return u;
     }
 
-    public Usuario actualizar(Usuario u){
+    public Usuario update(Usuario u){
         int id = 0;
         int idPos = 0;
 
@@ -62,7 +62,7 @@ public class UsuarioRepository {
         return u1;
     }
 
-    public void eliminar(int id){
+    public void deleteById(int id){
         usuarios.removeIf(u -> u.getId() == id);
     }
 
